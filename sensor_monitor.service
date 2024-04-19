@@ -1,0 +1,12 @@
+[Unit]
+Description=A service that will keep my sensor_monitor app running in the background
+After=multi-user.target
+[Service]
+Type=simple
+Restart=always
+RestartSec=1s
+User=pi
+Group=pi
+ExecStart=/usr/bin/python3 /home/pi/monitor/app.py
+[Install]
+WantedBy=multi-user.target

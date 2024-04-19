@@ -1,0 +1,10 @@
+[Unit]
+Description=A service that will run my prometheus docker at boot
+After=multi-user.target
+[Service]
+Type=simple
+User=pi
+Group=pi
+ExecStart=/usr/bin/sh /home/pi/monitor/docker_script.sh
+[Install]
+WantedBy=multi-user.target
